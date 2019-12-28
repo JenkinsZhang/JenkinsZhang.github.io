@@ -12,7 +12,7 @@ tags:
 
 > This document is not completed and will be updated anytime.
 
-##前言
+## 前言
 临近毕业设计，选了个Java-Web的系统设计题目，但很多一些后端的东西有点忘记了，所以就打算写点博客复习复习，反正都是些小东西^_^
 
 
@@ -21,7 +21,7 @@ tags:
 ---
 
 
-####SpringMVC 复习(一)
+#### SpringMVC 复习(一)
 
 这个注解主要是用来对WebDataBinder进行初始化，用在@Controller注解方法中注册一个绑定器初始化，但只对本控制器有效
 
