@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins's Blog</title>
+    <description>Just a noob</description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 29 Dec 2019 00:06:21 +0800</pubDate>
+    <lastBuildDate>Sun, 29 Dec 2019 00:06:21 +0800</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>JAVA Backend</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;This document is not completed and will be updated anytime.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;临近毕业设计，选了个Java-Web的系统设计题目，但很多一些后端的东西有点忘记了，所以就打算写点博客复习复习，虽然都是些小东西，但这知识他就是进不去脑子啊，一天一小忘，三天一大忘&lt;/p&gt;
+
+&lt;p&gt;大概以后的博客会写成英文的，也大概不定时更新，看我自己有没有空8，反正都是写给自己看的&lt;/p&gt;
+
+&lt;p&gt;同步的代码我都放在了&lt;a href=&quot;https://github.com/JenkinsZhang/springboot_springcloud_review&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;springmvc-复习一&quot;&gt;SpringMVC 复习(一)&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;h5 id=&quot;initbinder&quot;&gt;@InitBinder&lt;/h5&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个注解主要是用来对WebDataBinder进行初始化，用在@Controller注解方法中，注册一个绑定器初始化，但只对本控制器有效&lt;/p&gt;
+
+&lt;p&gt;示例代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;@InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.registerCustomEditor(Date.class,
+                new CustomDateEditor(new SimpleDateFormat(&quot;yyyy-MM-dd&quot;),
+                        false));
+    }
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这里使用@InitBinder注解创建了一个方法，为绑定器添加了一个日期转换编辑器，当然你也可以添加别的东西，比如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;binder.setValidator(YOUR_VALIDATOR)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这次就记这么多，待会儿再复习一下文件的上传以及下载。&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Sat, 28 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://0.0.0.0:4000/2019/12/28/hello-my-blog/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/28/hello-my-blog/</guid>
+        
+        <category>Java</category>
+        
+        <category>SpringBoot</category>
+        
+        <category>SpringMVC</category>
+        
+        <category>Backend</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

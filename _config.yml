@@ -1,10 +1,10 @@
 # Site settings
 title: Jenkins's Blog
-SEOTitle: ZJP的博客 | Jenkin's Blog
+SEOTitle: 张金鹏的博客 | Jenkin's Blog
 header-img: img/home-bg.jpg
 email: jenkinszhang1998@gmail.com
 description: "Just a noob"
-keyword: "Java, 明日方舟, steam, Shanghai University"
+keyword: "Java, 明日方舟, steam, Shanghai University, Blog"
 url: "https://jenkinszhang.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -16,8 +16,8 @@ RSS: false
 weibo_username:     jenkinszhang
 #zhihu_username:     huxpro
 github_username:    jenkinszhang
-#twitter_username:   huxpro
-#facebook_username:  huxpro
+twitter_username:   jenkinszhang98
+facebook_username:  jenkinszhang98
 #linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: jenkinszhang
 
 # Netease settings
 netease_comment: false
@@ -71,15 +71,15 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+ga_track_id: 'UA-155100076-1'            # Format: UA-xxxxxx-xx
+ga_domain: jenkinszhang.github.io
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/avatar-jenkins-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "个人邮箱: | Personal Email:<br>jenkinszhang1998@gmail.com"
+sidebar-avatar: /img/avatar-jenkins-home.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -102,10 +102,7 @@ page-mathjax: false
 
 # Friends
 friends: [
-#    {
-#    #     title: "Su",
-#    #     href: "http://su.gallery/"
-#    # },{
+#      {
 #        title: "乱序",
 #        href: "http://mida.re/"
 #    },{

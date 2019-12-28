@@ -1,0 +1,44 @@
+I"�<blockquote>
+  <p>This document is not completed and will be updated anytime.</p>
+</blockquote>
+
+<h2 id="前言">前言</h2>
+<p>临近毕业设计，选了个Java-Web的系统设计题目，但很多一些后端的东西有点忘记了，所以就打算写点博客复习复习，虽然都是些小东西，但这知识他就是进不去脑子啊，一天一小忘，三天一大忘</p>
+
+<p>大概以后的博客会写成英文的，也大概不定时更新，看我自己有没有空8，反正都是写给自己看的</p>
+
+<p>同步的代码我都放在了<a href="https://github.com/JenkinsZhang/springboot_springcloud_review">这里</a></p>
+
+<hr />
+
+<h4 id="springmvc-复习一">SpringMVC 复习(一)</h4>
+<blockquote>
+  <h5 id="initbinder">@InitBinder</h5>
+</blockquote>
+
+<p>这个注解主要是用来对WebDataBinder进行初始化，用在@Controller注解方法中，注册一个绑定器初始化，但只对本控制器有效</p>
+
+<p>示例代码如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>@InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.registerCustomEditor(Date.class,
+                new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"),
+                        false));
+    }
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>这里使用@InitBinder注解创建了一个方法，为绑定器添加了一个日期转换编辑器，当然你也可以添加别的东西，比如：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>binder.setValidator(YOUR_VALIDATOR)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>这次就记这么多，待会儿再复习一下文件的上传以及下载。</p>
+
+<hr />
+:ET
