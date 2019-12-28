@@ -3,7 +3,7 @@ layout:     post
 title:      "Example Post"
 subtitle:   "SpringMVC复习(一)"
 date:       2019-12-28
-author:     "Hux"
+author:     "JenkinsZhang"
 tags:
     - Java
     - SpringBoot
@@ -21,9 +21,8 @@ tags:
 ---
 
 
-##SpringMVC 复习(一)
+####SpringMVC 复习(一)
 
-####@InitBinder
 这个注解主要是用来对WebDataBinder进行初始化，用在@Controller注解方法中注册一个绑定器初始化，但只对本控制器有效
 
 示例代码如下：
