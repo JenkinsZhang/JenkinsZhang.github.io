@@ -23,7 +23,7 @@ tags:
 ### SpringMVC 复习(一)
 >#### 文件的下载
 这个不需要前端代码，只需要后端写好，在浏览器打开相关链接就可以看到效果，代码如下：
-````
+```
 @GetMapping("/download")
     public String download(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -49,7 +49,7 @@ tags:
         }
         return "success";
     }
-````
+```
 接下来是解释:  
 首先要获取到response，在方法中的参数写上```HttpServletResponse response ```即可  
 
