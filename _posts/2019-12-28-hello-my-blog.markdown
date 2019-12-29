@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "JAVA Backend"
-subtitle:   "SpringMVC复习(一)"
+title:      "SpringMVC复习(一)"
+subtitle:   "@InitBinder注解"
 date:       2019-12-28
 author:     "JenkinsZhang"
 tags:

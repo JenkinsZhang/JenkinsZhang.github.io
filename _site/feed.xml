@@ -5,12 +5,31 @@
     <description>Just a noob</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 29 Dec 2019 00:06:21 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Dec 2019 00:06:21 +0800</lastBuildDate>
+    <pubDate>Sun, 29 Dec 2019 10:14:40 +0800</pubDate>
+    <lastBuildDate>Sun, 29 Dec 2019 10:14:40 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>JAVA Backend</title>
+        <title>SpringMVC复习(二)</title>
+        <description>
+</description>
+        <pubDate>Sun, 29 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</guid>
+        
+        <category>Java</category>
+        
+        <category>SpringBoot</category>
+        
+        <category>SpringMVC</category>
+        
+        <category>Backend</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>SpringMVC复习(一)</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This document is not completed and will be updated anytime.&lt;/p&gt;
 &lt;/blockquote&gt;
