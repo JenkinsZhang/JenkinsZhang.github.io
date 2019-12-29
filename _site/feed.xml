@@ -5,29 +5,302 @@
     <description>Just a noob</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 29 Dec 2019 10:14:40 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Dec 2019 10:14:40 +0800</lastBuildDate>
+      <pubDate>Sun, 29 Dec 2019 14:19:32 +0800</pubDate>
+      <lastBuildDate>Sun, 29 Dec 2019 14:19:32 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
-    
+
       <item>
         <title>SpringMVC复习(二)</title>
-        <description>
+          <description>&lt;blockquote&gt;
+              &lt;p&gt;This document is not completed and will be updated anytime.&lt;/p&gt;
+              &lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+              &lt;p&gt;这是复习的第二篇，主要来讲讲SpringMVC的文件上传与下载，同步的代码可以点&lt;a href=&quot;https://github.com/JenkinsZhang/springboot_springcloud_review&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+              &lt;p&gt;前一篇:&lt;a href=&quot;https://jenkinszhang.github.io/2019/12/28/hello-my-blog/&quot;&gt;SpringMVC复习(一)&lt;/a&gt;&lt;/p&gt;
+
+              &lt;p&gt;这里是&lt;a href=&quot;https://jenkinszhang.github.io/archive/?tag=SpringMVC&quot;&gt;合集&lt;/a&gt;&lt;/p&gt;
+
+              &lt;hr /&gt;
+              &lt;h3 id=&quot;springmvc-复习一&quot;&gt;SpringMVC 复习(一)&lt;/h3&gt;
+              &lt;blockquote&gt;
+              &lt;h4 id=&quot;文件的下载&quot;&gt;文件的下载&lt;/h4&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;这个不需要前端代码，只需要后端写好，在浏览器打开相关链接就可以看到效果，代码如下：&lt;/p&gt;
+
+              &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table
+              class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre
+              class=&quot;lineno&quot;&gt;1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
+              11
+              12
+              13
+              14
+              15
+              16
+              17
+              18
+              19
+              20
+              21
+              22
+              23
+              24
+              25
+              &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;@GetMapping(&quot;/download&quot;)
+              public String download(HttpServletRequest request, HttpServletResponse response) {
+              try {
+              // you should change this path when deploying on the server
+              String filePath = &quot;/Users/jenkinszhang/PROGRAMMING/Java/New_Backend_review/eureka-service/src/main/java/com/jenkins/eurekaservice/files/downloadFiles/&quot;;
+              InputStream inputStream = new BufferedInputStream(new FileInputStream(filePath + &quot;/timg.jpeg&quot;));
+
+              //if you want to download other files,please change this line of code
+              String filename = &quot;test.jpeg&quot;;
+
+
+              byte[] body = new byte[inputStream.available()];
+              inputStream.read(body);
+              inputStream.close();
+              ServletOutputStream outputStream = response.getOutputStream();
+              response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=&quot; + filename);
+              outputStream.write(body);
+              outputStream.flush();
+
+
+              } catch (IOException e) {
+              return &quot;download failed&quot;;
+              }
+              return &quot;success&quot;;
+              }
+              &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+              &lt;p&gt;接下来是解释:&lt;br /&gt;
+              首先要获取到response，在方法中的参数写上&lt;code class=&quot;highlighter-rouge&quot;&gt;HttpServletResponse response&lt;/code&gt;即可&lt;/p&gt;
+
+              &lt;p&gt;然后规定你想要浏览器（客户端）获取的文件路径，在这里我写的是我自己项目存放文件的路径，如果到时候要部署到服务器上，这个路径可以根据个人需要进行更改，不过感觉这样蛮麻烦的&lt;/p&gt;
+
+              &lt;p&gt;接着获取文件输入流，我这里使用了 &lt;code class=&quot;highlighter-rouge&quot;&gt;BufferdInputStream&lt;/code&gt;，获取到文件的byte[]类型数组，都是些常规的IO操作&lt;/p&gt;
+
+              &lt;p&gt;最后获取response的输出流，将文件写入到response中，注意response的响应头要进行设置，如:&lt;br /&gt;
+              &lt;code class=&quot;highlighter-rouge&quot;&gt;response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=&quot;
+              + filename);&lt;/code&gt;&lt;/p&gt;
+
+              &lt;blockquote&gt;
+              &lt;p&gt;Content-Disposition属性有两种类型:&lt;br /&gt;
+                  1.inline:将文件内容直接显示在页面&lt;br /&gt;
+                  2.attachment:弹出对话框让用户下载&lt;br /&gt;
+              filename:浏览器（客户端）下载的文件名&lt;/p&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;在这里我用的是attachment,打开浏览器访问你的controller路径，就可以下载文件了&lt;/p&gt;
+
+              &lt;hr /&gt;
+              &lt;blockquote&gt;
+              &lt;h4 id=&quot;文件的上传&quot;&gt;文件的上传&lt;/h4&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;文件的上传总体来说还是挺方便的，与下载也是大同小异，只需要在方法中加上参数:&lt;code class=&quot;highlighter-rouge&quot;&gt;MultipartFile
+              file&lt;/code&gt;即可&lt;br /&gt;
+              代码如下：&lt;/p&gt;
+              &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table
+              class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre
+              class=&quot;lineno&quot;&gt;1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
+              11
+              12
+              13
+              14
+              15
+              16
+              17
+              18
+              19
+              20
+              &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt; @PostMapping(&quot;/upload&quot;)
+              public String upload(@RequestParam(&quot;file&quot;) MultipartFile file, HttpServletRequest request) {
+              // you should change this path when deploying on the server
+              String filePath = &quot;/Users/jenkinszhang/PROGRAMMING/Java/New_Backend_review/eureka-service/src/main/java/com/jenkins/eurekaservice/files/uploadFiles/&quot;;
+              if (!file.isEmpty()) {
+              try {
+              File dest = new File(filePath, file.getOriginalFilename());
+              if (!dest.exists()) {
+              dest.mkdirs();
+              }
+              file.transferTo(new File(filePath, file.getOriginalFilename()));
+              } catch (IOException e) {
+              e.printStackTrace();
+              }
+              } else {
+              return &quot;failed&quot;;
+              }
+
+              return &quot;success&quot;;
+              }
+              &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;p&gt;filePath与下载差不多，是存放你上传的文件的文件夹路径，获取到了路径以后，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;transferTo()&lt;/code&gt;这个方法，将参数中的file文件上传到你指定的文件夹，后端的操作就完成了&lt;br
+              /&gt;
+              接下来上前端的示例代码，这里我用的是vue+bootstrap，直接把人家组件拉过来用了&lt;/p&gt;
+              &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table
+              class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre
+              class=&quot;lineno&quot;&gt;1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
+              11
+              12
+              13
+              14
+              15
+              16
+              17
+              18
+              19
+              20
+              21
+              22
+              23
+              24
+              25
+              26
+              27
+              28
+              29
+              30
+              31
+              32
+              33
+              34
+              35
+              36
+              37
+              38
+              39
+              40
+              41
+              42
+              43
+              44
+              45
+              46
+              47
+              48
+              49
+              50
+              51
+              52
+              53
+              54
+              55
+              56
+              &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&amp;lt;template&amp;gt;
+              &amp;lt;div&amp;gt;
+              &amp;lt;!-- Styled --&amp;gt;
+              &amp;lt;b-container&amp;gt;
+              &amp;lt;b-row&amp;gt;
+              &amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
+              &amp;lt;/b-row&amp;gt;
+              &amp;lt;b-row align-v=&quot;center&quot; align-h=&quot;center&quot;&amp;gt;
+              &amp;lt;b-col md=&quot;6&quot;&amp;gt;
+              &amp;lt;b-form-file
+              v-model=&quot;file&quot;
+              :state=&quot;Boolean(file)&quot;
+              placeholder=&quot;Choose a file or drop it here...&quot;
+              drop-placeholder=&quot;Drop file here...&quot;
+
+              &amp;gt;&amp;lt;/b-form-file&amp;gt;
+              &amp;lt;/b-col&amp;gt;
+              &amp;lt;/b-row&amp;gt;
+              &amp;lt;div class=&quot;mt-6&quot;&amp;gt;Selected file: &amp;lt;/div&amp;gt;
+              &amp;lt;b-button @click=&quot;upload_file&quot; type=&quot;submit&quot; variant=&quot;primary&quot;&amp;gt;summit&amp;lt;/b-button&amp;gt;
+              &amp;lt;!-- Plain mode --&amp;gt;
+              &amp;lt;b-form-file v-model=&quot;file2&quot; class=&quot;mt-3&quot; plain&amp;gt;&amp;lt;/b-form-file&amp;gt;
+              &amp;lt;div class=&quot;mt-3&quot;&amp;gt;Selected file: &amp;lt;/div&amp;gt;
+              &amp;lt;/b-container&amp;gt;
+              &amp;lt;/div&amp;gt;
+              &amp;lt;/template&amp;gt;
+
+              &amp;lt;script&amp;gt;
+              export default {
+              name: &quot;upload&quot;,
+              data() {
+              return {
+              file: null,
+              file2: null
+              }
+              },
+              methods: {
+              upload_file() {
+              var form = new FormData()
+              form.append(&quot;file&quot;, this.file)
+              this.axios({
+              url: &quot;http://localhost:1235/upload&quot;,
+              method: 'post',
+              data: form,
+              headers: {
+              'Content-Type': 'multipart/form-data'
+              }
+              }).then((res) =&amp;gt; {
+              console.log(res.data);
+              })
+
+              }
+              }
+              }
+              &amp;lt;/script&amp;gt;
+
+              &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;p&gt;template的代码是直接复制黏贴的，不解释了，说说上传的逻辑&lt;/p&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;var form = new FormData()&lt;/code&gt;创建表单数据，使用将&lt;code
+              class=&quot;highlighter-rouge&quot;&gt;append&lt;/code&gt;方法将&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;中的&lt;code
+              class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;传入，并取名为”file”&lt;br /&gt;
+              随后使用axios进行上传，设置路径，方法，携带数据，头部信息即可，Content-Type是固定写法（至少我是这样）&lt;/p&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;如果遇到了跨域问题，那么在java的Controller中加入@CrossOrigin注解即可访问，亲测有效&lt;/p&gt;
+
+              &lt;hr /&gt;
+
 </description>
         <pubDate>Sun, 29 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</guid>
-        
+
         <category>Java</category>
-        
+
         <category>SpringBoot</category>
-        
+
         <category>SpringMVC</category>
-        
+
         <category>Backend</category>
-        
-        
+
+
       </item>
-    
+
       <item>
         <title>SpringMVC复习(一)</title>
         <description>&lt;blockquote&gt;
@@ -77,17 +350,17 @@
         <pubDate>Sat, 28 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://0.0.0.0:4000/2019/12/28/hello-my-blog/</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/28/hello-my-blog/</guid>
-        
+
         <category>Java</category>
-        
+
         <category>SpringBoot</category>
-        
+
         <category>SpringMVC</category>
-        
+
         <category>Backend</category>
-        
-        
+
+
       </item>
-    
+
   </channel>
 </rss>
