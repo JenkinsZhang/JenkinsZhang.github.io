@@ -20,7 +20,7 @@ tags:
 这里是[合集](https://jenkinszhang.github.io/archive/?tag=SpringMVC)
 
 ---
-### SpringMVC 复习(一)
+### SpringMVC 复习(二)
 >#### 文件的下载
 
 这个不需要前端代码，只需要后端写好，在浏览器打开相关链接就可以看到效果，代码如下：  
