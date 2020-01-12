@@ -1,0 +1,75 @@
+I"7<h2 id="前言">前言</h2>
+<p>这是复习的第三篇，对上一片文章进行了一点点的补充，同步的代码可以点<a href="https://github.com/JenkinsZhang/springboot_springcloud_review">这里</a></p>
+
+<p>前一篇:<a href="https://jenkinszhang.github.io/2019/12/29/spring-mvc-review2/">SpringMVC复习(二)</a></p>
+
+<p>这里是<a href="https://jenkinszhang.github.io/archive/?tag=SpringMVC">合集</a></p>
+
+<hr />
+<h3 id="springmvc-复习二">SpringMVC 复习(二)</h3>
+
+<blockquote>
+  <h4 id="多文件的上传">多文件的上传</h4>
+</blockquote>
+
+<p>多文件的上传与上一篇所讲的单文件上传基本完全一致，只是今天突然用到了就再复习一下，下面是代码：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre>@PostMapping("/upload")
+    public String upload(MultipartRequest request, @RequestParam("target") String target) {
+        // you should change this path when deploying on the server
+        List&lt;MultipartFile&gt; files = request.getFiles("file");
+        String filePath = "/Users/jenkinszhang/PROGRAMMING/Java/New_Backend_review/eureka-service/src/main/java/com/jenkins/eurekaservice/files/uploadFiles/";
+        System.out.println(target);
+        for (MultipartFile file : files) {
+            System.out.println(file.getName());
+            if (!file.isEmpty()) {
+                try {
+                    File dest = new File(filePath, file.getOriginalFilename());
+                    if (!dest.exists()) {
+                        dest.mkdirs();
+                    }
+                    file.transferTo(new File(filePath, file.getOriginalFilename()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                return "failed";
+            }
+        }
+
+        return "success";
+    }
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>可以注意到，方法中的参数由原来的MultipartFile 变成了MultipartRequest 来获取携带文件传输的request对象。<br />
+随后我们就可以通过<code class="highlighter-rouge">request.getFiles("file")</code>方法来获取文件的List对象，随后遍历这个List就可以获取到我们想要的文件了。</p>
+<blockquote>
+  <p>注意：这里的文件key名”file”是前端所规定的，比如说前端是这么写的:<br />
+form.append(“file”,this.file1)<br />
+form.append(“file”,this.file2)<br />
+那么”file”这个key下就有两个文件，使用<code class="highlighter-rouge">request.getFiles("file")</code>就可以获取到具有两个MultipartFile类型对象的List</p>
+</blockquote>
+:ET

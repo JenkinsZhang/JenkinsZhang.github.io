@@ -16,7 +16,7 @@ layout: default
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-10 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
 
@@ -47,7 +47,6 @@ layout: default
                     {% endif %}
                 </ul>
                 <hr style="visibility: hidden;">
-
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -61,7 +60,7 @@ layout: default
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
-            </div>  
+            </div>
 
     <!-- Side Catalog Container -->
         {% if page.catalog %}
@@ -106,7 +105,7 @@ layout: default
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
-    url: document.location.href, 
+      url: document.location.href,
     sourceId: "",
     productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
     target: "cloud-tie-wrapper"
