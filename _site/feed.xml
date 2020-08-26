@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins's Blog</title>
-    <description>Just a noob</description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Jan 2020 21:41:17 +0800</pubDate>
-    <lastBuildDate>Sun, 12 Jan 2020 21:41:17 +0800</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
-    
+      <title>Jenkins's Blog</title>
+      <description>Just a noob</description>
+      <link>http://0.0.0.0:4000/</link>
+      <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+      <pubDate>Wed, 26 Aug 2020 20:03:49 +0800</pubDate>
+      <lastBuildDate>Wed, 26 Aug 2020 20:03:49 +0800</lastBuildDate>
+      <generator>Jekyll v4.0.0</generator>
+
       <item>
-        <title>SpringMVC复习(三)</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;这是复习的第三篇，对上一片文章进行了一点点的补充，同步的代码可以点&lt;a href=&quot;https://github.com/JenkinsZhang/springboot_springcloud_review&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+          <title>My Personal Project Has Online</title>
+          <description>&lt;blockquote&gt;
+              &lt;p&gt;This document is not completed and will be updated anytime.&lt;/p&gt;
+              &lt;/blockquote&gt;
 
-&lt;p&gt;前一篇:&lt;a href=&quot;https://jenkinszhang.github.io/2019/12/29/spring-mvc-review2/&quot;&gt;SpringMVC复习(二)&lt;/a&gt;&lt;/p&gt;
+              &lt;h2 id=&quot;foreword&quot;&gt;Foreword&lt;/h2&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;It has been a long time since I built this blog, but I barely wrote anything on it. I will try my
+              best to learn and post something that I think is of some value to my blog in the future time.&lt;/p&gt;
+              &lt;/blockquote&gt;
 
-&lt;p&gt;这里是&lt;a href=&quot;https://jenkinszhang.github.io/archive/?tag=SpringMVC&quot;&gt;合集&lt;/a&gt;&lt;/p&gt;
+              &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;My personal project has online! Check out at &lt;a href=&quot;http://34.105.212.23/&quot;&gt;MyProject&lt;/a&gt;.&lt;/p&gt;
 
-&lt;hr /&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;It uses SpringBoot &amp;amp; SpringCloud as backend frameworks and Vue.js as frontend framework.&lt;/p&gt;
+              &lt;/blockquote&gt;
+
+              &lt;blockquote&gt;
+              &lt;p&gt;I deploy it using Docker &amp;amp; Nginx on my personal Google Cloud Server.(I got free $270 for
+              being a new user!).&lt;/p&gt;
+              &lt;/blockquote&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;Here’s what the website looks like:&lt;/p&gt;
+
+              &lt;p&gt;&lt;img src=&quot;/img/in-post/2020-08-26/website.png&quot; alt=&quot;demo-website&quot; /&gt;&lt;/p&gt;
+
+              &lt;p&gt;You can go to &lt;a href=&quot;http://34.105.212.23/admin&quot;&gt;website-admin&lt;/a&gt; to
+              check out the admin panel and modify courses.
+              The account has been created for you, the login name is ‘Test’ and the password is ‘1234’.&lt;/p&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;You can’t use google or facebook or twitter to sign in because I haven’t added this function.
+              It’s a little bit complex for me right now and the page is just a template. You can just login with the
+              account I provide you.&lt;/p&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;I use “ace” template to create the admin website.&lt;/p&gt;
+
+              &lt;p&gt;Here’s Course Management in admin panel.
+              &lt;img src=&quot;/img/in-post/2020-08-26/website-admin-course-panel.png&quot; alt=&quot;demo-website-admin&quot;
+              /&gt;&lt;/p&gt;
+
+              &lt;h2 id=&quot;todo&quot;&gt;Todo&lt;/h2&gt;
+              &lt;p&gt;&lt;b&gt;So many things to be done!&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;
+              &lt;blockquote&gt;
+              &lt;p&gt;As you can see, although it took me a lot of time to build this(Even if it’s just a course that I
+              found on the website. And there are videos that teach me about it), there are many functions that aren’t
+              realized.&lt;/p&gt;
+              &lt;ol&gt;
+              &lt;li&gt;SMS Code&lt;/li&gt;
+              &lt;li&gt;Course Payment&lt;/li&gt;
+              &lt;li&gt;Video uploading (It’s too slow right now)&lt;/li&gt;
+              &lt;li&gt;Sign in through third party&lt;/li&gt;
+              &lt;/ol&gt;
+              &lt;/blockquote&gt;
+
+              &lt;p&gt;&lt;strong&gt;I don’t know if I have the ability or the time to finish the Todo list. I’ll try my
+              best.&lt;/strong&gt;&lt;/p&gt;
+
+              &lt;p&gt;&lt;strong&gt;Now I want to focus on my upcoming postgraduate studies at UCD. Bye for now!&lt;/strong&gt;&lt;/p&gt;
+          </description>
+          <pubDate>Wed, 26 Aug 2020 00:00:00 +0800</pubDate>
+          <link>http://0.0.0.0:4000/2020/08/26/small-project/</link>
+          <guid isPermaLink="true">http://0.0.0.0:4000/2020/08/26/small-project/</guid>
+
+          <category>Java</category>
+
+          <category>SpringBoot</category>
+
+          <category>SpringMVC</category>
+
+          <category>Backend</category>
+
+          <category>Docker</category>
+
+          <category>Vue.js</category>
+
+
+      </item>
+
+      <item>
+          <title>SpringMVC复习(三)</title>
+          <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+              &lt;p&gt;这是复习的第三篇，对上一片文章进行了一点点的补充，同步的代码可以点&lt;a href=&quot;https://github.com/JenkinsZhang/springboot_springcloud_review&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+              &lt;p&gt;前一篇:&lt;a href=&quot;https://jenkinszhang.github.io/2019/12/29/spring-mvc-review2/&quot;&gt;SpringMVC复习(二)&lt;/a&gt;&lt;/p&gt;
+
+              &lt;p&gt;这里是&lt;a href=&quot;https://jenkinszhang.github.io/archive/?tag=SpringMVC&quot;&gt;合集&lt;/a&gt;&lt;/p&gt;
+
+              &lt;hr /&gt;
 &lt;h3 id=&quot;springmvc-复习二&quot;&gt;SpringMVC 复习(二)&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -89,18 +172,18 @@ form.append(“file”,this.file2)&lt;br /&gt;
         <pubDate>Mon, 06 Jan 2020 00:00:00 +0800</pubDate>
         <link>http://0.0.0.0:4000/2020/01/06/spring-mvc-review3/</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2020/01/06/spring-mvc-review3/</guid>
-        
+
         <category>Java</category>
-        
+
         <category>SpringBoot</category>
-        
+
         <category>SpringMVC</category>
-        
+
         <category>Backend</category>
-        
-        
+
+
       </item>
-    
+
       <item>
         <title>SpringMVC复习(二)</title>
         <description>&lt;blockquote&gt;
@@ -237,7 +320,7 @@ filename:浏览器（客户端）下载的文件名&lt;/p&gt;
            } else {
                return &quot;failed&quot;;
            }
-   
+
            return &quot;success&quot;;
        }
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -313,7 +396,7 @@ filename:浏览器（客户端）下载的文件名&lt;/p&gt;
 							:state=&quot;Boolean(file)&quot;
 							placeholder=&quot;Choose a file or drop it here...&quot;
 							drop-placeholder=&quot;Drop file here...&quot;
-					
+
 					&amp;gt;&amp;lt;/b-form-file&amp;gt;
 				&amp;lt;/b-col&amp;gt;
 			&amp;lt;/b-row&amp;gt;
@@ -370,18 +453,18 @@ filename:浏览器（客户端）下载的文件名&lt;/p&gt;
         <pubDate>Sun, 29 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/29/spring-mvc-review2/</guid>
-        
+
         <category>Java</category>
-        
+
         <category>SpringBoot</category>
-        
+
         <category>SpringMVC</category>
-        
+
         <category>Backend</category>
-        
-        
+
+
       </item>
-    
+
       <item>
         <title>SpringMVC复习(一)</title>
         <description>&lt;blockquote&gt;
@@ -431,17 +514,17 @@ filename:浏览器（客户端）下载的文件名&lt;/p&gt;
         <pubDate>Sat, 28 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://0.0.0.0:4000/2019/12/28/hello-my-blog/</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/28/hello-my-blog/</guid>
-        
+
         <category>Java</category>
-        
+
         <category>SpringBoot</category>
-        
+
         <category>SpringMVC</category>
-        
+
         <category>Backend</category>
-        
-        
+
+
       </item>
-    
+
   </channel>
 </rss>
